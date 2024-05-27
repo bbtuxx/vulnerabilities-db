@@ -1,0 +1,310 @@
+[
+    {
+        "id": "001",
+        "vulnerability": "SQL Injection",
+        "pattern": ".*execute\\(.*\\+.*\\).*",
+        "recommendation": "Используйте подготовленные запросы или ORM."
+    },
+    {
+        "id": "002",
+        "vulnerability": "XSS",
+        "pattern": ".*<script>.*",
+        "recommendation": "Экранируйте пользовательский ввод."
+    },
+    {
+        "id": "003",
+        "vulnerability": "Command Injection",
+        "pattern": ".*os\\.system\\(.*\\+.*\\).*",
+        "recommendation": "Используйте функции с безопасными параметрами или библиотеки для выполнения команд."
+    },
+    {
+        "id": "004",
+        "vulnerability": "Path Traversal",
+        "pattern": ".*open\\(.*\\+.*\\).*",
+        "recommendation": "Проверяйте и экранируйте пути к файлам."
+    },
+    {
+        "id": "005",
+        "vulnerability": "Insecure Deserialization",
+        "pattern": ".*pickle\\.loads\\(.*\\).*",
+        "recommendation": "Используйте безопасные методы десериализации или библиотеки."
+    },
+    {
+        "id": "006",
+        "vulnerability": "Cross-Site Request Forgery (CSRF)",
+        "pattern": ".*<form.*",
+        "recommendation": "Используйте токены CSRF для защиты форм."
+    },
+    {
+        "id": "007",
+        "vulnerability": "Remote File Inclusion",
+        "pattern": ".*include\\(.*\\$.*\\).*",
+        "recommendation": "Проверяйте и экранируйте пути к файлам, избегайте использования пользовательских данных для указания пути."
+    },
+    {
+        "id": "008",
+        "vulnerability": "Local File Inclusion",
+        "pattern": ".*require\\(.*\\$.*\\).*",
+        "recommendation": "Проверяйте и экранируйте пути к файлам, избегайте использования пользовательских данных для указания пути."
+    },
+    {
+        "id": "009",
+        "vulnerability": "LDAP Injection",
+        "pattern": ".*ldap_search\\(.*\\+.*\\).*",
+        "recommendation": "Используйте безопасные API или библиотеки для работы с LDAP."
+    },
+    {
+        "id": "010",
+        "vulnerability": "XML External Entity (XXE)",
+        "pattern": ".*xml\\.etree\\.ElementTree\\.parse\\(.*\\).*",
+        "recommendation": "Используйте безопасные библиотеки для обработки XML, отключайте обработку внешних сущностей."
+    },
+    {
+        "id": "011",
+        "vulnerability": "Insecure Direct Object References (IDOR)",
+        "pattern": ".*request\\.GET\\[.*\\].*",
+        "recommendation": "Проверяйте права доступа пользователей к объектам."
+    },
+    {
+        "id": "012",
+        "vulnerability": "Buffer Overflow",
+        "pattern": ".*strcpy\\(.*\\).*",
+        "recommendation": "Используйте безопасные функции для работы с буферами, такие как strncpy."
+    },
+    {
+        "id": "013",
+        "vulnerability": "Format String Vulnerability",
+        "pattern": ".*printf\\(.*\\$.*\\).*",
+        "recommendation": "Используйте безопасные функции для форматирования строк, избегайте прямой вставки пользовательских данных."
+    },
+    {
+        "id": "014",
+        "vulnerability": "Integer Overflow",
+        "pattern": ".*\\+.*=.*",
+        "recommendation": "Проверяйте граничные значения перед выполнением арифметических операций."
+    },
+    {
+        "id": "015",
+        "vulnerability": "Hardcoded Credentials",
+        "pattern": ".*password\\s*=\\s*\".*\".*",
+        "recommendation": "Избегайте использования жестко закодированных учетных данных, используйте безопасные хранилища."
+    },
+    {
+        "id": "016",
+        "vulnerability": "Unrestricted File Upload",
+        "pattern": ".*upload\\.file\\(.*\\).*",
+        "recommendation": "Проверяйте тип и размер загружаемых файлов, используйте директории с ограниченными правами доступа."
+    },
+    {
+        "id": "017",
+        "vulnerability": "Open Redirect",
+        "pattern": ".*redirect\\(.*\\+.*\\).*",
+        "recommendation": "Проверяйте и экранируйте URL-адреса перед редиректом, избегайте использования пользовательских данных напрямую."
+    },
+    {
+        "id": "018",
+        "vulnerability": "Unsafe Reflection",
+        "pattern": ".*Class\\.forName\\(.*\\$.*\\).*",
+        "recommendation": "Избегайте использования рефлексии с пользовательскими данными."
+    },
+    {
+        "id": "019",
+        "vulnerability": "Mass Assignment",
+        "pattern": ".*update_attributes\\(.*params.*\\).*",
+        "recommendation": "Используйте white-list для атрибутов, которые могут быть обновлены."
+    },
+    {
+        "id": "020",
+        "vulnerability": "Insufficient Logging and Monitoring",
+        "pattern": ".*",
+        "recommendation": "Убедитесь, что все важные действия и ошибки логируются, и эти логи мониторятся."
+    },
+    {
+        "id": "021",
+        "vulnerability": "Server-Side Request Forgery (SSRF)",
+        "pattern": ".*requests\\.get\\(.*\\$.*\\).*",
+        "recommendation": "Проверяйте и экранируйте URL-адреса, используйте white-list для допустимых адресов."
+    },
+    {
+        "id": "022",
+        "vulnerability": "Use of a Broken or Risky Cryptographic Algorithm",
+        "pattern": ".*MD5\\(.*\\).*",
+        "recommendation": "Используйте современные и безопасные алгоритмы шифрования, такие как SHA-256 или SHA-3."
+    },
+    {
+        "id": "023",
+        "vulnerability": "Use of Hard-coded Cryptographic Key",
+        "pattern": ".*key\\s*=\\s*\".*\".*",
+        "recommendation": "Избегайте использования жестко закодированных криптографических ключей, используйте безопасные хранилища."
+    },
+    {
+        "id": "024",
+        "vulnerability": "Improper Certificate Validation",
+        "pattern": ".*verify=False.*",
+        "recommendation": "Убедитесь, что все SSL/TLS сертификаты проверяются."
+    },
+    {
+        "id": "025",
+        "vulnerability": "Cross-Site Scripting (XSS) via JSON",
+        "pattern": ".*json\\.dumps\\(.*\\+.*\\).*",
+        "recommendation": "Экранируйте данные перед передачей в JSON, используйте безопасные методы сериализации."
+    },
+    {
+        "id": "026",
+        "vulnerability": "Exposure of Sensitive Information in Logs",
+        "pattern": ".*logger\\.info\\(.*password.*\\).*",
+        "recommendation": "Избегайте логирования конфиденциальной информации."
+    },
+    {
+        "id": "027",
+        "vulnerability": "Improper Access Control",
+        "pattern": ".*",
+        "recommendation": "Убедитесь, что все чувствительные операции защищены соответствующими механизмами контроля доступа."
+    },
+    {
+        "id": "028",
+        "vulnerability": "Security Misconfiguration",
+        "pattern": ".*",
+        "recommendation": "Регулярно проверяйте и обновляйте конфигурации безопасности вашего приложения и серверов."
+    },
+    {
+        "id": "029",
+        "vulnerability": "Sensitive Data Exposure",
+        "pattern": ".*",
+        "recommendation": "Используйте шифрование для хранения и передачи конфиденциальных данных."
+    },
+    {
+        "id": "030",
+        "vulnerability": "Improper Input Validation",
+        "pattern": ".*",
+        "recommendation": "Проверяйте и валидируйте все входные данные, используйте white-list подход."
+    },
+    {
+        "id": "031",
+        "vulnerability": "Insufficient Transport Layer Protection",
+        "pattern": ".*http://.*",
+        "recommendation": "Используйте HTTPS для защиты данных в транзите."
+    }
+]
+[
+    {
+        "id": "032",
+        "vulnerability": "Insecure Randomness",
+        "pattern": ".*random\\.randint\\(.*\\).*",
+        "recommendation": "Используйте криптографически безопасные генераторы случайных чисел, такие как random.SystemRandom."
+    },
+    {
+        "id": "033",
+        "vulnerability": "Weak Password Policy",
+        "pattern": ".*password.*",
+        "recommendation": "Убедитесь, что политика паролей требует использование сложных и длинных паролей."
+    },
+    {
+        "id": "034",
+        "vulnerability": "Improper Error Handling",
+        "pattern": ".*except.*:",
+        "recommendation": "Используйте конкретные исключения и логируйте ошибки, избегайте использования общих исключений."
+    },
+    {
+        "id": "035",
+        "vulnerability": "Exposed Session Tokens",
+        "pattern": ".*session\\[.*\\].*",
+        "recommendation": "Убедитесь, что сессионные токены защищены и не передаются по незащищенным каналам."
+    },
+    {
+        "id": "036",
+        "vulnerability": "Overly Permissive CORS Policy",
+        "pattern": ".*CORS_ALLOW_ALL_ORIGINS.*=\\s*True",
+        "recommendation": "Ограничьте допустимые источники в CORS-политике."
+    },
+    {
+        "id": "037",
+        "vulnerability": "Unvalidated Redirects and Forwards",
+        "pattern": ".*redirect\\(.*\\$.*\\).*",
+        "recommendation": "Проверяйте URL перед перенаправлением и используйте white-list для допустимых адресов."
+    },
+    {
+        "id": "038",
+        "vulnerability": "Use of Deprecated Functions",
+        "pattern": ".*eval\\(.*\\).*",
+        "recommendation": "Избегайте использования устаревших и небезопасных функций, таких как eval."
+    },
+    {
+        "id": "039",
+        "vulnerability": "Sensitive Data Exposure via GET",
+        "pattern": ".*request\\.GET\\[.*password.*\\].*",
+        "recommendation": "Не передавайте конфиденциальные данные через URL-адреса."
+    },
+    {
+        "id": "040",
+        "vulnerability": "Insecure Default Configuration",
+        "pattern": ".*DEBUG\\s*=\\s*True",
+        "recommendation": "Отключайте режим отладки в производственной среде."
+    },
+    {
+        "id": "041",
+        "vulnerability": "Clickjacking",
+        "pattern": ".*",
+        "recommendation": "Используйте HTTP-заголовок X-Frame-Options для предотвращения Clickjacking."
+    },
+    {
+        "id": "042",
+        "vulnerability": "Information Disclosure through Comments",
+        "pattern": ".*<!--.*TODO.*-->.*",
+        "recommendation": "Удаляйте комментарии, содержащие конфиденциальную информацию или планы."
+    },
+    {
+        "id": "043",
+        "vulnerability": "Information Leakage through Stack Trace",
+        "pattern": ".*",
+        "recommendation": "Отключайте отображение стека вызовов в ошибках в производственной среде."
+    },
+    {
+        "id": "044",
+        "vulnerability": "Unprotected APIs",
+        "pattern": ".*",
+        "recommendation": "Убедитесь, что все API защищены аутентификацией и авторизацией."
+    },
+    {
+        "id": "045",
+        "vulnerability": "Improper Restriction of XML External Entity Reference",
+        "pattern": ".*",
+        "recommendation": "Отключите обработку внешних сущностей (XXE) в парсерах XML."
+    },
+    {
+        "id": "046",
+        "vulnerability": "Improper Neutralization of CRLF Sequences in HTTP Headers",
+        "pattern": ".*",
+        "recommendation": "Экранируйте все пользовательские данные, используемые в HTTP заголовках."
+    },
+    {
+        "id": "047",
+        "vulnerability": "Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+        "pattern": ".*Set-Cookie.*",
+        "recommendation": "Убедитесь, что атрибут 'Secure' установлен для всех cookies, передаваемых по HTTPS."
+    },
+    {
+        "id": "048",
+        "vulnerability": "Server-Side Template Injection",
+        "pattern": ".*render_template\\(.*\\+.*\\).*",
+        "recommendation": "Экранируйте пользовательские данные перед использованием в шаблонах."
+    },
+    {
+        "id": "049",
+        "vulnerability": "Insufficient Anti-Automation",
+        "pattern": ".*",
+        "recommendation": "Используйте CAPTCHA или другие методы защиты от автоматических атак."
+    },
+    {
+        "id": "050",
+        "vulnerability": "Insecure DOR",
+        "pattern": ".*",
+        "recommendation": "Проверяйте права доступа пользователей к ресурсам перед выполнением действий."
+    },
+    {
+        "id": "051",
+        "vulnerability": "Improperly Implemented Access Control",
+        "pattern": ".*",
+        "recommendation": "Убедитесь, что все критические функции защищены механизмами контроля доступа."
+    }
+]
